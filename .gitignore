@@ -1,0 +1,32 @@
+# Quartus generated directories and databases
+db/
+incremental_db/
+output_files/
+*.qws
+*.qdb
+*.qmsg
+*.smsg
+*.sof
+*.pof
+*.jic
+
+# Questa / ModelSim generated state
+work/
+sim/work/
+transcript
+vsim.wlf
+*.wlf
+
+# Host-language caches and environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Generated vectors and local reports
+models/generated/
+sim/generated/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
