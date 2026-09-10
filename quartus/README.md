@@ -20,3 +20,10 @@ Do not add a device family, part number, pin map, clock constraint, or board pro
 - Pin and timing constraints after the board interface is known.
 - Reproducible command-line or GUI instructions for compilation.
 - Reports sufficient to relate resource use and timing to a specific revision.
+
+## Local installation verified
+
+The local installation currently exposes Quartus Prime Pro Edition 26.1.1.130
+under `E:\Altera`, including `quartus\bin64\quartus.exe`. This repository does
+not yet define a device-specific `.qpf`/`.qsf`; synthesis configuration will be
+added only after the FPGA family and board are selected.

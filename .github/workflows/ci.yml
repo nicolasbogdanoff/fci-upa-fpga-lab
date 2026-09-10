@@ -1,0 +1,23 @@
+name: Python and vector verification
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  reference-model:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Run reference-model tests
+        run: python -m unittest discover -s models -p 'test_*.py'
+      - name: Regenerate deterministic vectors
+        run: python models/generate_thermal_vectors.py
+      - name: Ensure vectors are reproducible
+        run: git diff --exit-code -- models/thermal_vectors.csv
+
