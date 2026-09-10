@@ -13,7 +13,7 @@ def main() -> None:
     states = simulate_fixed(q8_8(20.0), target_q8_8, dt_s=1.0, tau_s=5.0)
 
     with output.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.writer(handle)
+        writer = csv.writer(handle, lineterminator="\n")
         writer.writerow(["sample", "target_q8_8", "result_q8_8"])
         for index, (target, result) in enumerate(zip(target_q8_8, states)):
             writer.writerow([index, target, result])
@@ -22,4 +22,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
